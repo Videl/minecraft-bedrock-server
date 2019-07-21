@@ -1,4 +1,5 @@
-https://raw.githubusercontent.com/nguyer/bedrock-server/Forked from: 
+Forked from: https://raw.githubusercontent.com/nguyer/bedrock-server/ and updated by Videl!
+https://hub.docker.com/r/videl/minecraft-bedrock-server
 
 # minecraft-bedrock
 Run a bedrock server in a Docker container
@@ -9,14 +10,19 @@ If you run the container as is, the `worlds` directory will be created inside th
 
 Here is a `docker run` command that will do that, assuming you have a `worlds` directory and `server.properties` file at `/minecraft`. (You should change the path to wherever your stuff is.)
 
-    $ sudo docker run -d --name=minecraft\
-        -v '/minecraft/worlds:/bedrock-server/worlds'\
-        -v '/minecraft/server.properties:/bedrock-server/server.properties'\
-        --network host\
-        --restart=always\
-        nguyer/bedrock-server
+    $ sudo docker run -d --name=minecraft \
+	-v '/home/videl/minecraft/worlds:/bedrock-server/worlds' \
+	-v '/home/videl/minecraft/server.properties:/bedrock-server/server.properties' \
+	-v '/home/videl/minecraft/whitelist.j son:/bedrock-server/whitelist.json' \
+	-v '/home/videl/minecraft/permissions.json:/bedrock-server/permissions.json' 
+	--network host --restart=always \
+	videl/minecraft-bedrock-server
+	
 
 If you wanted to use custom resource packs, a whitelist, or other things, you could also mount those paths as well. Separating the content from the sever executable means that you can safely destroy your Docker container without losing your world. This will come in handy when there are updates to the server app, and you want to redeploy the container.
 
 Hopefully this is helpful to folks. Happy Minecrafting!
+
+Don't hesitate to send PRs!
+-- Videl 
 
