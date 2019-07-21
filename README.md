@@ -1,5 +1,8 @@
 Forked from: https://raw.githubusercontent.com/nguyer/bedrock-server/ and updated by Videl!
-https://hub.docker.com/r/videl/minecraft-bedrock-server
+
+Docker Hub: https://hub.docker.com/r/videl/minecraft-bedrock-server
+
+Image building is made by Docker Hub.
 
 # minecraft-bedrock
 Run a bedrock server in a Docker container
