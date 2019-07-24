@@ -16,7 +16,7 @@ Here is a `docker run` command that will do that, assuming you have a `worlds` d
     $ sudo docker run -d --name=minecraft \
 	-v '/home/videl/minecraft/worlds:/bedrock-server/worlds' \
 	-v '/home/videl/minecraft/server.properties:/bedrock-server/server.properties' \
-	-v '/home/videl/minecraft/whitelist.j son:/bedrock-server/whitelist.json' \
+	-v '/home/videl/minecraft/whitelist.json:/bedrock-server/whitelist.json' \
 	-v '/home/videl/minecraft/permissions.json:/bedrock-server/permissions.json' 
 	--network host --restart=always \
 	videl/minecraft-bedrock-server
